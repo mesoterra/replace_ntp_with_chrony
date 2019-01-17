@@ -15,7 +15,7 @@ if [[ ${is_ntp_installed} -eq '0' ]] ; then
     # disable ntp
     systemctl disable ntp 2&>1 /dev/null
     # remove ntp
-    yum -y remove ntp >> ${AUDITDIR}/service_remove_${TIME}.log
+    yum -y remove ntp
 fi
 # unset variable to prevent the possibility of future use.
 unset is_ntp_installed
@@ -30,7 +30,7 @@ is_chrony_installed="$?"
 # if is_chrony_installed equals 1 which indicates that it is not installed, then proceed.
 if [[ ${is_chrony_installed} -eq '1' ]] ; then
     # install chrony
-    yum -y install chrony >> ${AUDITDIR}/service_add_${TIME}.log
+    yum -y install chrony
 fi
 # re-check if chrony is installed.
 rpm -q chrony 2&>1 /dev/null
