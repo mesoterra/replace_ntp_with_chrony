@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# add your time server or servers in here, this line is space delimited.
 timeserver_list=(0.rhel.pool.ntp.org 1.rhel.pool.ntp.org 2.rhel.pool.ntp.org 3.rhel.pool.ntp.org)
 
 echo 'Removing NTP...'
